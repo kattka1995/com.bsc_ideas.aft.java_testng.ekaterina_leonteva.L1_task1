@@ -1,22 +1,24 @@
 package com.bsc_ideas.aft.java_testng.ekaterina_leonteva.L1_task3;
 
-import java.io.IOException;
 import java.util.Scanner;
 import java.lang.*;
 
 public class Runner {
     Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
-        int firstNumber= getInt();
+        int firstNumber = getInt();
         int secondNumber = getInt();
-        char operation= getOperation();
-        int result = calculate (firstNumber,secondNumber,operation);
-       // firstNumber = scanner.nextInt();
-        System.out.print("Результат вычисления равен "+result);
-        //secondNumber = scanner.nextInt();
-     }
+        char operation = getOperation();
+        double result = calculate(firstNumber, secondNumber, operation);
+        if (result == Double.POSITIVE_INFINITY) {
+            System.out.println("Предупреждение: Деление на 0 невозможно");
+        } else {
+
+            System.out.print("Результат вычисления равен " + result);
+        }
+    }
 
     public static char getOperation() {
         Scanner scanner = new Scanner(System.in);
@@ -24,7 +26,7 @@ public class Runner {
         char operation;
         if (scanner.hasNext()) {
             operation = scanner.next().charAt(0);
-        }else {
+        } else {
             System.out.println("Пожалуйста, введите одну из операций");
             scanner.next();
             operation = getOperation();
@@ -45,49 +47,37 @@ public class Runner {
         }
         return number;
     }
-        public static int calculate(int firstNumber, int secondNumber, char operation) throws IOException {
-            int result=0;
-            switch (operation) {
-                case  '+':
-                    result=addition(firstNumber, secondNumber);
-                    break;
-                case '-':
-                    result= subtraction(firstNumber, secondNumber);
-                    ;
-                    break;
-                case  '*':
-                    result=multiplication(firstNumber, secondNumber);
-                    ;
-                    break;
-                case '/':
-                    result=division(firstNumber, secondNumber);
-                    ;
-                    break;
-                default:
-                    System.out.println("Операция не найдена");
-                    result = calculate(firstNumber, secondNumber, getOperation());
-            }
-            return result;
-        }
 
-        public static int division(int x, int y)throws IOException {
-            try {
-                return x/y;
-            } catch (ArithmeticException Ex) {
-                System.out.println("Делитель не должен быть 0");
-            }
-            return y;
+    public static double calculate(double firstNumber, double secondNumber, char operation) {
+        switch (operation) {
+            case '+':
+                return addition(firstNumber, secondNumber);
+            case '-':
+                return subtraction(firstNumber, secondNumber);
+            case '*':
+                return multiplication(firstNumber, secondNumber);
+            case '/':
+                return division(firstNumber, secondNumber);
+            default:
+                System.out.println("Операция не найдена");
+                return calculate(firstNumber, secondNumber, getOperation());
         }
+    }
 
-    public static int multiplication(int x, int y) {
+    public static double division(double x, double y) {
+
+        return x / y;
+    }
+
+    public static double multiplication(double x, double y) {
         return x * y;
     }
 
-    public static int subtraction(int x, int y) {
+    public static double subtraction(double x, double y) {
         return x - y;
     }
 
-    public static int addition(int x, int y) {
+    public static double addition(double x, double y) {
         return x + y;
     }
 
