@@ -1,25 +1,27 @@
 package cafe;
 
 public class Roots extends Veg implements VegInterface {
-    Roots (Vegetables vegetables, double weight){
+    Roots(Vegetables vegetables, double weight) {
         switch (vegetables) {
             case CARROT:
             case RADISH:
-                setName (vegetables.name());
-                setProteins(vegetables.getProteins()*weight/100);
-                setCarbohydrates(vegetables.getCarbs()*weight/100);
-                setFats(vegetables.getFats()*weight/100);
-                setKkal(vegetables.getCarbs()*weight/100*4+vegetables.getFats()*weight/100*9+vegetables.getProteins()*weight/100*4);
+                setName(vegetables.name());
+                setProteins(vegetables.getProteins() * weight / 100);
+                setCarbohydrates(vegetables.getCarbs() * weight / 100);
+                setFats(vegetables.getFats() * weight / 100);
+                setKkal(vegetables.getCarbs() * weight / 100 * 4 + vegetables.getFats() * weight / 100 * 9 + vegetables.getProteins() * weight / 100 * 4);
                 break;
-                default:
-                    System.out.println("Не относится к Roots");
+            default:
+                System.out.println("Не относится к Roots");
         }
 
-    };
+    }
+
     public void setName(String name) {
         this.name = name;
     }
-    public void setKkal (double kkal){
+
+    public void setKkal(double kkal) {
         this.kkal = kkal;
     }
 
@@ -39,8 +41,4 @@ public class Roots extends Veg implements VegInterface {
     }
 
 
-
-    public double getCarbohydrates() {
-        return 0;
-    }
 }

@@ -1,11 +1,11 @@
 package cafe;
 
 public abstract class Veg {
-    String name;
     protected double proteins;
     protected double fats;
     protected double carbohydrates;
     protected double kkal;
+    String name;
 
     public String getName() {
         return name;
@@ -22,13 +22,14 @@ public abstract class Veg {
     public double getFats() {
         return fats;
     }
+
+    public abstract void setFats(double fats);
+
     public double getKkal() {
         return kkal;
     }
+
     public abstract void setKkal(double kkal);
-
-
-    public abstract void setFats(double fats);
 
     public double getCarbohydrates() {
         return carbohydrates;

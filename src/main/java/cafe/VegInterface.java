@@ -1,17 +1,17 @@
 package cafe;
 
 public interface VegInterface {
-    public String getName();
+    String getName();
 
 
-    public double getProteins();
+    double getProteins();
 
 
-    public double getFats();
+    double getFats();
 
 
+    double getCarbohydrates();
 
-    public double getCarbohydrates();
-    public double getKkal();
+    double getKkal();
 
 }

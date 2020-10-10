@@ -1,6 +1,6 @@
 package cafe;
 
-public enum   Vegetables {
+public enum Vegetables {
     //Potatoes
     WHITE_POTATO(2.0, 0.1, 17.1),
     RED_POTATO(1.9, 0.1, 19.7),
