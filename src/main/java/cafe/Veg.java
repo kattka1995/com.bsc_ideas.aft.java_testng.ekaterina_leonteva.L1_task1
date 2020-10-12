@@ -11,7 +11,7 @@ public abstract class Veg {//класс Овощи. Абстрактный кл�
         return name;
     }
 
-    public abstract void setName(String name);//задание имени
+    public abstract void setName(String name);//задание имении
 
     public Double getProteins() {
         return proteins;
