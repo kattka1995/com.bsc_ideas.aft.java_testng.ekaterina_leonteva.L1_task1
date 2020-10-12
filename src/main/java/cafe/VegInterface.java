@@ -1,17 +1,14 @@
 package cafe;
 
-public interface VegInterface {
+public interface VegInterface {//создание интерфейса для работы с овощами
+
     String getName();
 
-
-    double getProteins();
-
+    Double getProteins();
 
     double getFats();
 
-
-    double getCarbohydrates();
+    Double getCarbohydrates();
 
     double getKkal();
-
 }

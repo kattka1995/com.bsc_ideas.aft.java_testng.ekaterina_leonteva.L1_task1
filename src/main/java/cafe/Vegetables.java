@@ -1,6 +1,6 @@
 package cafe;
 
-public enum Vegetables {
+public enum Vegetables {//перечисление овощей и БЖУ,содержащихся в них
     //Potatoes
     WHITE_POTATO(2.0, 0.1, 17.1),
     RED_POTATO(1.9, 0.1, 19.7),
@@ -19,23 +19,21 @@ public enum Vegetables {
     private final double fats;
     private final double carbohydrates;
 
-    Vegetables(double proteins, double fats, double carbohydrates) {
-
+    Vegetables(double proteins, double fats, double carbohydrates) {//конструктор для создания овоща с БЖУ
         this.proteins = proteins;
         this.carbohydrates = carbohydrates;
         this.fats = fats;
     }
 
-
     public double getCarbs() {
         return this.carbohydrates;
-    }
+    }//получение количества углеводов
 
     public double getFats() {
         return this.fats;
-    }
+    }//получение количества жиров
 
     public double getProteins() {
         return this.proteins;
-    }
+    }//получение количества белков
 }
