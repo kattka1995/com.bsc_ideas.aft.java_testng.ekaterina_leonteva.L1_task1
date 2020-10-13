@@ -1,7 +1,8 @@
 package cafe;
 
-public class Potato extends Veg implements VegInterface {
-    Potato(Vegetables vegs, double weight) {
+public class Potato extends Veg implements VegInterface {//класс Картофель, овощи данного класса используются для приготовления салатов
+
+    Potato(Vegetables vegs, double weight) throws MyException {//конструктор класса картофель
         switch (vegs) {
             case WHITE_POTATO:
             case RED_POTATO:
@@ -9,10 +10,11 @@ public class Potato extends Veg implements VegInterface {
                 setProteins(vegs.getProteins() * weight / 100);
                 setCarbohydrates(vegs.getCarbs() * weight / 100);
                 setFats(vegs.getFats() * weight / 100);
-                setKkal(vegs.getCarbs() * weight / 100 * 4 + vegs.getFats() * weight / 100 * 9 + vegs.getProteins() * weight / 100 * 4);
+                setKkal(vegs.getCarbs() * weight / 100 * 4 + vegs.getFats() * weight / 100 * 9
+                        + vegs.getProteins() * weight / 100 * 4);
                 break;
             default:
-                System.out.println("Продукт не относится к картохе");
+                throw new MyException(vegs);
         }
     }
 
@@ -22,22 +24,17 @@ public class Potato extends Veg implements VegInterface {
 
     public void setKkal(double kkal) {
         this.kkal = kkal;
-    }
-
+    }//задание количества калорий
 
     public void setProteins(double proteins) {
         this.proteins = proteins;
-
-    }
+    }//задание количества белков
 
     public void setFats(double fats) {
         this.fats = fats;
+    }//задание количества жиров
 
-    }
-
-    public void setCarbohydrates(double carbohydrates) {
+    public void setCarbohydrates(double carbohydrates) {//задание количества углеводов
         this.carbohydrates = carbohydrates;
     }
-
-
 }
