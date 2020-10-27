@@ -1,0 +1,37 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="DevisionCheck1" verbose="1">
+    <test name="test1">
+        <groups>
+            <run>
+                <include name="PositiveResult"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="L2_task3_Test"/>
+        </classes>
+    </test>
+    <test name="test2">
+        <groups>
+            <run>
+                <include name="AnyResult"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="L2_task3_Test"/>
+        </classes>
+    </test>
+    <test name="test3" parallel="methods">
+        <classes>
+            <class name="L2_task3_Test">
+                <methods>
+                    <include name="testException"/>
+                    <include name="testDivisionDataProvider"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+
+
+
